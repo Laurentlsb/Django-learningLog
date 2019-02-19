@@ -1,0 +1,695 @@
+
+(11_env) D:\CS\DjangoProject\learning_log> git --version
+git version 2.20.1.windows.1
+
+(11_env) D:\CS\DjangoProject\learning_log> git config --global user.name "Aaron"
+
+(11_env) D:\CS\DjangoProject\learning_log> git config --global user.email "568625153@qq.com"
+
+(11_env) D:\CS\DjangoProject\learning_log> git init
+Initialized empty Git repository in D:/CS/DjangoProject/learning_log/.git/
+
+(11_env) D:\CS\DjangoProject\learning_log> git add .
+warning: LF will be replaced by CRLF in learning_log/settings.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_log/urls.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_log/wsgi.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/admin.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/migrations/0001_initial.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/migrations/0002_entry.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/migrations/0003_topic_owner.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/models.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/tests.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/urls.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_logs/views.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in manage.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in users/admin.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in users/models.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in users/tests.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in users/urls.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in users/views.py.
+The file will have its original line endings in your working directory
+
+(11_env) D:\CS\DjangoProject\learning_log> git commit -am "Ready for deployment to heroku."
+[master (root-commit) 9cc5811] Ready for deployment to heroku.
+ 39 files changed, 774 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Procfile
+ create mode 100644 learning_log/__init__.py
+ create mode 100644 learning_log/settings.py
+ create mode 100644 learning_log/static/placeholder.txt
+ create mode 100644 learning_log/urls.py
+ create mode 100644 learning_log/wsgi.py
+ create mode 100644 learning_logs/__init__.py
+ create mode 100644 learning_logs/admin.py
+ create mode 100644 learning_logs/forms.py
+ create mode 100644 learning_logs/migrations/0001_initial.py
+ create mode 100644 learning_logs/migrations/0002_entry.py
+ create mode 100644 learning_logs/migrations/0003_topic_owner.py
+ create mode 100644 learning_logs/migrations/__init__.py
+ create mode 100644 learning_logs/models.py
+ create mode 100644 learning_logs/templates/learning_logs/base.html
+ create mode 100644 learning_logs/templates/learning_logs/base_without_bootstrap.html
+ create mode 100644 learning_logs/templates/learning_logs/edit_entry.html
+ create mode 100644 learning_logs/templates/learning_logs/index.html
+ create mode 100644 learning_logs/templates/learning_logs/new_entry.html
+ create mode 100644 learning_logs/templates/learning_logs/new_topic.html
+ create mode 100644 learning_logs/templates/learning_logs/topic.html
+ create mode 100644 learning_logs/templates/learning_logs/topics.html
+ create mode 100644 learning_logs/tests.py
+ create mode 100644 learning_logs/urls.py
+ create mode 100644 learning_logs/views.py
+ create mode 100644 manage.py
+ create mode 100644 requirements.txt
+ create mode 100644 runtime.txt
+ create mode 100644 users/__init__.py
+ create mode 100644 users/admin.py
+ create mode 100644 users/migrations/__init__.py
+ create mode 100644 users/models.py
+ create mode 100644 users/templates/users/login.html
+ create mode 100644 users/templates/users/login_without_bootstrap.html
+ create mode 100644 users/templates/users/register.html
+ create mode 100644 users/tests.py
+ create mode 100644 users/urls.py
+ create mode 100644 users/views.py
+
+(11_env) D:\CS\DjangoProject\learning_log> git status
+On branch master
+nothing to commit, working tree clean
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Logging in... done
+Logged in as sibo.li@rice.edu
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku create
+Creating app... done, ? afternoon-woodland-88836
+https://afternoon-woodland-88836.herokuapp.com/ | https://git.heroku.com/afternoon-woodland-88836.git
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 46, done.
+Counting objects: 100% (46/46), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (46/46), 11.36 KiB | 727.00 KiB/s, done.
+Total 46 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.6.5
+remote: -----> Installing pip
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting dj-database-url==0.5.0 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/d4/a6/4b8578c1848690d0c307c7c0596af2077536c9ef2a04d42b00fabaa7e49d/dj_database_url-0.5.0-py2.py3-none-any.whl
+remote:        Collecting dj-static==0.0.6 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/2b/8f/77a4b8ec50c821193bf9682c7896f12fd0418eb3711a7d66796ede59c23b/dj-static-0.0.6.tar.gz
+remote:        Collecting Django==1.8.5 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/69/cc/9aa13faa16849cdf0b27e5ad9b1a9f82d1c1136c88382f24fe07b4290e35/Django-1.8.5-py2.py3-none-any.whl (6.2MB)
+remote:        Collecting django-bootstrap3==11.0.0 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/9c/09/8313187ca7fe30e15cfe890db06a4475b68ce7588c44c8e60ec7b3758ba6/django-bootstrap3-11.0.0.tar.gz (40kB)
+remote:        Collecting gunicorn==19.9.0 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl (112kB)
+remote:        Collecting static3==0.7.0 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/87/b0/9cf15108b73c4f2ffffe11d237c938f57785f55d3693d822d565432cb680/static3-0.7.0.tar.gz
+remote:        Collecting psycopg2>=2.6.1 (from -r /tmp/build_a831d2d2996625df3ba0d378981b1e56/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/2a/61a8f9719bd6df5b421abd91740cb0595fc3c17b28eaf89fe4f144472ca6/psycopg2-2.7.6.1-cp36-cp36m-manylinux1_x86_64.whl (2.7MB)
+remote:        Installing collected packages: dj-database-url, static3, dj-static, Django, django-bootstrap3, gunicorn, psycopg2
+remote:          Running setup.py install for static3: started
+remote:            Running setup.py install for static3: finished with status 'done'
+remote:          Running setup.py install for dj-static: started
+remote:            Running setup.py install for dj-static: finished with status 'done'
+remote:          Running setup.py install for django-bootstrap3: started
+remote:            Running setup.py install for django-bootstrap3: finished with status 'done'
+remote:        Successfully installed Django-1.8.5 dj-database-url-0.5.0 dj-static-0.0.6 django-bootstrap3-11.0.0 gunicorn-19.9.0 psycopg2-2.7.6.1 static3-0.7.0
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Traceback (most recent call last):
+remote:          File "manage.py", line 10, in <module>
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 351, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 343, in execute
+remote:            self.fetch_command(subcommand).run_from_argv(self.argv)
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 190, in fetch_command
+remote:            klass = load_command_class(app_name, subcommand)
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 41, in load_command_class
+remote:            return module.Command()
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 32, in __init__
+remote:            self.storage.path('')
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/storage.py", line 48, in path
+remote:            raise ImproperlyConfigured("You're using the staticfiles app "
+remote:        django.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to afternoon-woodland-88836.
+remote:
+To https://git.heroku.com/afternoon-woodland-88836.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/afternoon-woodland-88836.git'
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 46, done.
+Counting objects: 100% (46/46), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (46/46), 11.36 KiB | 727.00 KiB/s, done.
+Total 46 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.6.5
+remote: -----> Installing pip
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting dj-database-url==0.5.0 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/d4/a6/4b8578c1848690d0c307c7c0596af2077536c9ef2a04d42b00fabaa7e49d/dj_database_url-0.5.0-py2.py3-none-any.whl
+remote:        Collecting dj-static==0.0.6 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/2b/8f/77a4b8ec50c821193bf9682c7896f12fd0418eb3711a7d66796ede59c23b/dj-static-0.0.6.tar.gz
+remote:        Collecting Django==1.8.5 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/69/cc/9aa13faa16849cdf0b27e5ad9b1a9f82d1c1136c88382f24fe07b4290e35/Django-1.8.5-py2.py3-none-any.whl (6.2MB)
+remote:        Collecting django-bootstrap3==11.0.0 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/9c/09/8313187ca7fe30e15cfe890db06a4475b68ce7588c44c8e60ec7b3758ba6/django-bootstrap3-11.0.0.tar.gz (40kB)
+remote:        Collecting gunicorn==19.9.0 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl (112kB)
+remote:        Collecting static3==0.7.0 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/87/b0/9cf15108b73c4f2ffffe11d237c938f57785f55d3693d822d565432cb680/static3-0.7.0.tar.gz
+remote:        Collecting psycopg2>=2.6.1 (from -r /tmp/build_69a3bb84996bfa6f683950a6966f6445/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/2a/61a8f9719bd6df5b421abd91740cb0595fc3c17b28eaf89fe4f144472ca6/psycopg2-2.7.6.1-cp36-cp36m-manylinux1_x86_64.whl (2.7MB)
+remote:        Installing collected packages: dj-database-url, static3, dj-static, Django, django-bootstrap3, gunicorn, psycopg2
+remote:          Running setup.py install for static3: started
+remote:            Running setup.py install for static3: finished with status 'done'
+remote:          Running setup.py install for dj-static: started
+remote:            Running setup.py install for dj-static: finished with status 'done'
+remote:          Running setup.py install for django-bootstrap3: started
+remote:            Running setup.py install for django-bootstrap3: finished with status 'done'
+remote:        Successfully installed Django-1.8.5 dj-database-url-0.5.0 dj-static-0.0.6 django-bootstrap3-11.0.0 gunicorn-19.9.0 psycopg2-2.7.6.1 static3-0.7.0
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        Traceback (most recent call last):
+remote:          File "manage.py", line 10, in <module>
+remote:            execute_from_command_line(sys.argv)
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 351, in execute_from_command_line
+remote:            utility.execute()
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 343, in execute
+remote:            self.fetch_command(subcommand).run_from_argv(self.argv)
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 190, in fetch_command
+remote:            klass = load_command_class(app_name, subcommand)
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/core/management/__init__.py", line 41, in load_command_class
+remote:            return module.Command()
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/management/commands/collectstatic.py", line 32, in __init__
+remote:            self.storage.path('')
+remote:          File "/app/.heroku/python/lib/python3.6/site-packages/django/contrib/staticfiles/storage.py", line 48, in path
+remote:            raise ImproperlyConfigured("You're using the staticfiles app "
+remote:        django.core.exceptions.ImproperlyConfigured: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
+remote:
+remote:  !     Error while running '$ python manage.py collectstatic --noinput'.
+remote:        See traceback above for details.
+remote:
+remote:        You may need to update application code to resolve this error.
+remote:        Or, you can disable collectstatic for this application:
+remote:
+remote:           $ heroku config:set DISABLE_COLLECTSTATIC=1
+remote:
+remote:        https://devcenter.heroku.com/articles/django-assets
+remote:  !     Push rejected, failed to compile Python app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !       Push rejected to afternoon-woodland-88836.
+remote:
+To https://git.heroku.com/afternoon-woodland-88836.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/afternoon-woodland-88836.git'
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku config: set DISABLE_COLLECTSTATIC=0
+ ?   Warning: config: is not a heroku command.
+Did you mean config? [y/n]:
+ ?   Error: Run heroku help config for a list of available commands.
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku config:set DISABLE_COLLECTSTATIC=0
+Setting DISABLE_COLLECTSTATIC and restarting ? afternoon-woodland-88836... done, v3
+DISABLE_COLLECTSTATIC: 0
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 46, done.
+Counting objects: 100% (46/46), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (46/46), 11.36 KiB | 505.00 KiB/s, done.
+Total 46 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.6.5
+remote: -----> Installing pip
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting dj-database-url==0.5.0 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/d4/a6/4b8578c1848690d0c307c7c0596af2077536c9ef2a04d42b00fabaa7e49d/dj_database_url-0.5.0-py2.py3-none-any.whl
+remote:        Collecting dj-static==0.0.6 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/2b/8f/77a4b8ec50c821193bf9682c7896f12fd0418eb3711a7d66796ede59c23b/dj-static-0.0.6.tar.gz
+remote:        Collecting Django==1.8.5 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/69/cc/9aa13faa16849cdf0b27e5ad9b1a9f82d1c1136c88382f24fe07b4290e35/Django-1.8.5-py2.py3-none-any.whl (6.2MB)
+remote:        Collecting django-bootstrap3==11.0.0 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/9c/09/8313187ca7fe30e15cfe890db06a4475b68ce7588c44c8e60ec7b3758ba6/django-bootstrap3-11.0.0.tar.gz (40kB)
+remote:        Collecting gunicorn==19.9.0 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl (112kB)
+remote:        Collecting static3==0.7.0 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/87/b0/9cf15108b73c4f2ffffe11d237c938f57785f55d3693d822d565432cb680/static3-0.7.0.tar.gz
+remote:        Collecting psycopg2>=2.6.1 (from -r /tmp/build_78a471b81fe2679d07c919e653d7ce60/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/2a/61a8f9719bd6df5b421abd91740cb0595fc3c17b28eaf89fe4f144472ca6/psycopg2-2.7.6.1-cp36-cp36m-manylinux1_x86_64.whl (2.7MB)
+remote:        Installing collected packages: dj-database-url, static3, dj-static, Django, django-bootstrap3, gunicorn, psycopg2
+remote:          Running setup.py install for static3: started
+remote:            Running setup.py install for static3: finished with status 'done'
+remote:          Running setup.py install for dj-static: started
+remote:            Running setup.py install for dj-static: finished with status 'done'
+remote:          Running setup.py install for django-bootstrap3: started
+remote:            Running setup.py install for django-bootstrap3: finished with status 'done'
+remote:        Successfully installed Django-1.8.5 dj-database-url-0.5.0 dj-static-0.0.6 django-bootstrap3-11.0.0 gunicorn-19.9.0 psycopg2-2.7.6.1 static3-0.7.0
+remote:
+remote: -----> Discovering process types
+remote:
+remote: -----> Compressing...
+remote:        Done: 51.7M
+remote: -----> Launching...
+remote:        Released v6
+remote:        https://afternoon-woodland-88836.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/afternoon-woodland-88836.git
+ * [new branch]      master -> master
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku ps
+Free dyno hours quota remaining this month: 550h 0m (100%)
+Free dyno usage for this app: 0h 0m (0%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+No dynos on ? afternoon-woodland-88836
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku open
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Logging in... done
+Logged in as sibo.li@rice.edu
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku ps
+Free dyno hours quota remaining this month: 550h 0m (100%)
+Free dyno usage for this app: 0h 0m (0%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+No dynos on ? afternoon-woodland-88836
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku open
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku logs --tail
+2019-01-06T05:26:28.127804+00:00 app[api]: Release v1 created by user sibo.li@rice.edu
+2019-01-06T05:26:28.127804+00:00 app[api]: Initial release by user sibo.li@rice.edu
+2019-01-06T05:30:59.000000+00:00 app[api]: Build failed -- check your build logs
+2019-01-06T06:18:00.000000+00:00 app[api]: Build failed -- check your build logs
+2019-01-06T06:25:26.844511+00:00 app[api]: Release v3 created by user sibo.li@rice.edu
+2019-01-06T06:25:26.844511+00:00 app[api]: Set DISABLE_COLLECTSTATIC config vars by user sibo.li@rice.edu
+2019-01-06T06:26:32.671803+00:00 app[api]: Attach DATABASE (@ref:postgresql-tetrahedral-58939) by user sibo.li@rice.edu
+2019-01-06T06:26:32.671803+00:00 app[api]: Running release v4 commands by user sibo.li@rice.edu
+2019-01-06T06:26:32.969867+00:00 app[api]: Deploy 9cc58116 by user sibo.li@rice.edu
+2019-01-06T06:26:32.687815+00:00 app[api]: @ref:postgresql-tetrahedral-58939 completed provisioning, setting DATABASE_URL. by user sibo.li@rice.edu
+2019-01-06T06:26:32.687815+00:00 app[api]: Release v5 created by user sibo.li@rice.edu
+2019-01-06T06:26:32.969867+00:00 app[api]: Release v6 created by user sibo.li@rice.edu
+2019-01-06T06:26:42.000000+00:00 app[api]: Build succeeded
+2019-01-06T20:23:25.725545+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=fe34430e-1d41-475b-b90f-70ddeab803cf fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:34:00.651020+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=e60e5104-57d2-4f2e-9204-8f3063a83365 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:34:01.140934+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=9ca3b5b5-df58-4ef2-8e18-08e56f1e8c9c fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:36:55.908480+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=1808659c-ef85-4c02-a6e0-5e1005b08222 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+^C终止批处理操作吗(Y/N)? Y
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku logs --tail
+2019-01-06T05:26:28.127804+00:00 app[api]: Release v1 created by user sibo.li@rice.edu
+2019-01-06T05:26:28.127804+00:00 app[api]: Initial release by user sibo.li@rice.edu
+2019-01-06T05:30:59.000000+00:00 app[api]: Build failed -- check your build logs
+2019-01-06T06:18:00.000000+00:00 app[api]: Build failed -- check your build logs
+2019-01-06T06:25:26.844511+00:00 app[api]: Release v3 created by user sibo.li@rice.edu
+2019-01-06T06:25:26.844511+00:00 app[api]: Set DISABLE_COLLECTSTATIC config vars by user sibo.li@rice.edu
+2019-01-06T06:26:32.671803+00:00 app[api]: Attach DATABASE (@ref:postgresql-tetrahedral-58939) by user sibo.li@rice.edu
+2019-01-06T06:26:32.671803+00:00 app[api]: Running release v4 commands by user sibo.li@rice.edu
+2019-01-06T06:26:32.969867+00:00 app[api]: Deploy 9cc58116 by user sibo.li@rice.edu
+2019-01-06T06:26:32.687815+00:00 app[api]: @ref:postgresql-tetrahedral-58939 completed provisioning, setting DATABASE_URL. by user sibo.li@rice.edu
+2019-01-06T06:26:32.687815+00:00 app[api]: Release v5 created by user sibo.li@rice.edu
+2019-01-06T06:26:32.969867+00:00 app[api]: Release v6 created by user sibo.li@rice.edu
+2019-01-06T06:26:42.000000+00:00 app[api]: Build succeeded
+2019-01-06T20:23:25.725545+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=fe34430e-1d41-475b-b90f-70ddeab803cf fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:34:00.651020+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=e60e5104-57d2-4f2e-9204-8f3063a83365 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:34:01.140934+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=9ca3b5b5-df58-4ef2-8e18-08e56f1e8c9c fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:36:55.908480+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=1808659c-ef85-4c02-a6e0-5e1005b08222 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:42:41.984524+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=ac6fa32f-a40f-4243-87d5-e2cfc90b990d fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:42:42.327339+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=30e3701f-3032-4b36-9529-5b13b61dcf2f fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:43:44.801608+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=9cf3bdf1-e456-496f-91c9-096492923f0b fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:46:15.486838+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=9624f621-6c96-47a6-a34e-653feac5abed fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:49:33.348941+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=80a0c04b-9744-4721-92c2-6d31a9f16176 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:49:33.738419+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=521d7184-e4ef-42fc-9461-44998236cf2f fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:54:36.878961+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/" host=afternoon-woodland-88836.herokuapp.com request_id=86af97eb-7aa6-4835-a752-dc697353d430 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+2019-01-06T20:54:37.242241+00:00 heroku[router]: at=error code=H14 desc="No web processes running" method=GET path="/favicon.ico" host=afternoon-woodland-88836.herokuapp.com request_id=0aa4ae1c-e744-4266-8b0f-b0dc9288aeb6 fwd="128.42.159.31" dyno= connect= service= status=503 bytes= protocol=https
+^C终止批处理操作吗(Y/N)? Y
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku create
+Creating app... done, ? radiant-caverns-71567
+https://radiant-caverns-71567.herokuapp.com/ | https://git.heroku.com/radiant-caverns-71567.git
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+remote: !       No such app as afternoon-woodland-88836.
+fatal: repository 'https://git.heroku.com/afternoon-woodland-88836.git/' not found
+
+(11_env) D:\CS\DjangoProject\learning_log> git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Procfile
+        modified:   learning_log/settings.py
+        modified:   learning_log/wsgi.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+(11_env) D:\CS\DjangoProject\learning_log> git init
+Reinitialized existing Git repository in D:/CS/DjangoProject/learning_log/.git/
+
+(11_env) D:\CS\DjangoProject\learning_log> git add .
+warning: LF will be replaced by CRLF in learning_log/settings.py.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in learning_log/wsgi.py.
+The file will have its original line endings in your working directory
+
+(11_env) D:\CS\DjangoProject\learning_log> git commit -am "Ready for deployment to heroku."
+[master 9d6ccda] Ready for deployment to heroku.
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+(11_env) D:\CS\DjangoProject\learning_log> git status
+On branch master
+nothing to commit, working tree clean
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Logging in... done
+Logged in as sibo.li@rice.edu
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku create
+Creating app... done, ? aqueous-reaches-36909
+https://aqueous-reaches-36909.herokuapp.com/ | https://git.heroku.com/aqueous-reaches-36909.git
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+remote: !       No such app as afternoon-woodland-88836.
+fatal: repository 'https://git.heroku.com/afternoon-woodland-88836.git/' not found
+
+(11_env) D:\CS\DjangoProject\learning_log> git remote rm heroku
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku git:remote -a afternoon-woodland-88836
+set git remote heroku to https://git.heroku.com/afternoon-woodland-88836.git
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 52, done.
+Counting objects: 100% (52/52), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (43/43), done.
+Writing objects: 100% (52/52), 11.81 KiB | 636.00 KiB/s, done.
+Total 52 (delta 7), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing python-3.6.5
+remote: -----> Installing pip
+remote: -----> Installing SQLite3
+remote: -----> Installing requirements with pip
+remote:        Collecting dj-database-url==0.5.0 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 1))
+remote:          Downloading https://files.pythonhosted.org/packages/d4/a6/4b8578c1848690d0c307c7c0596af2077536c9ef2a04d42b00fabaa7e49d/dj_database_url-0.5.0-py2.py3-none-any.whl
+remote:        Collecting dj-static==0.0.6 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 2))
+remote:          Downloading https://files.pythonhosted.org/packages/2b/8f/77a4b8ec50c821193bf9682c7896f12fd0418eb3711a7d66796ede59c23b/dj-static-0.0.6.tar.gz
+remote:        Collecting Django==1.8.5 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 3))
+remote:          Downloading https://files.pythonhosted.org/packages/69/cc/9aa13faa16849cdf0b27e5ad9b1a9f82d1c1136c88382f24fe07b4290e35/Django-1.8.5-py2.py3-none-any.whl (6.2MB)
+remote:        Collecting django-bootstrap3==11.0.0 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 4))
+remote:          Downloading https://files.pythonhosted.org/packages/9c/09/8313187ca7fe30e15cfe890db06a4475b68ce7588c44c8e60ec7b3758ba6/django-bootstrap3-11.0.0.tar.gz (40kB)
+remote:        Collecting gunicorn==19.9.0 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 5))
+remote:          Downloading https://files.pythonhosted.org/packages/8c/da/b8dd8deb741bff556db53902d4706774c8e1e67265f69528c14c003644e6/gunicorn-19.9.0-py2.py3-none-any.whl (112kB)
+remote:        Collecting static3==0.7.0 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 6))
+remote:          Downloading https://files.pythonhosted.org/packages/87/b0/9cf15108b73c4f2ffffe11d237c938f57785f55d3693d822d565432cb680/static3-0.7.0.tar.gz
+remote:        Collecting psycopg2>=2.6.1 (from -r /tmp/build_ccb79b4bed5c2827aa9cf25869df2290/requirements.txt (line 7))
+remote:          Downloading https://files.pythonhosted.org/packages/bc/2a/61a8f9719bd6df5b421abd91740cb0595fc3c17b28eaf89fe4f144472ca6/psycopg2-2.7.6.1-cp36-cp36m-manylinux1_x86_64.whl (2.7MB)
+remote:        Installing collected packages: dj-database-url, static3, dj-static, Django, django-bootstrap3, gunicorn, psycopg2
+remote:          Running setup.py install for static3: started
+remote:            Running setup.py install for static3: finished with status 'done'
+remote:          Running setup.py install for dj-static: started
+remote:            Running setup.py install for dj-static: finished with status 'done'
+remote:          Running setup.py install for django-bootstrap3: started
+remote:            Running setup.py install for django-bootstrap3: finished with status 'done'
+remote:        Successfully installed Django-1.8.5 dj-database-url-0.5.0 dj-static-0.0.6 django-bootstrap3-11.0.0 gunicorn-19.9.0 psycopg2-2.7.6.1 static3-0.7.0
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        /app/.heroku/python/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+remote:          """)
+remote:        63 static files copied to '/tmp/build_ccb79b4bed5c2827aa9cf25869df2290/staticfiles'.
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 51.8M
+remote: -----> Launching...
+remote:        Released v5
+remote:        https://afternoon-woodland-88836.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/afternoon-woodland-88836.git
+ * [new branch]      master -> master
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku ps
+Free dyno hours quota remaining this month: 550h 0m (100%)
+Free dyno usage for this app: 0h 0m (0%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+=== web (Free): gunicorn learning_log.wsgi --log-file - (1)
+web.1: up 2019/01/06 15:14:13 -0600 (~ 27s ago)
+
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku open
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku run python manage.py migrate
+Running python manage.py migrate on ? afternoon-woodland-88836... up, run.1179 (Free)
+/app/.heroku/python/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+Operations to perform:
+  Synchronize unmigrated apps: staticfiles, bootstrap3, messages
+  Apply all migrations: sessions, learning_logs, auth, contenttypes, admin
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying learning_logs.0001_initial... OK
+  Applying learning_logs.0002_entry... OK
+  Applying learning_logs.0003_topic_owner... OK
+  Applying sessions.0001_initial... OK
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku run bash
+Running bash on ? afternoon-woodland-88836... up, run.8195 (Free)
+~ $ ls
+learning_log  learning_logs  manage.py  Procfile  requirements.txt  runtime.txt  staticfiles  users
+~ $ python manage.py createsuperuser
+/app/.heroku/python/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+
+Username (leave blank to use 'u34157'): Laurent
+Email address: siboli_96@outlook.com
+Password:
+Password (again):
+Superuser created successfully.
+~ $ exit
+exit
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku apps:rename laurent-learning-log
+Renaming afternoon-woodland-88836 to laurent-learning-log... done
+https://laurent-learning-log.herokuapp.com/ | https://git.heroku.com/laurent-learning-log.git
+Git remote heroku updated
+ !    Don't forget to update git remotes for all other local checkouts of the app.
+
+(11_env) D:\CS\DjangoProject\learning_log> git remote rm heroku
+
+(11_env) D:\CS\DjangoProject\learning_log> heroku git:remote -a laurent-learning-log
+set git remote heroku to https://git.heroku.com/laurent-learning-log.git
+
+(11_env) D:\CS\DjangoProject\learning_log> git commit -am "Set Debug=False for Heroku."
+warning: LF will be replaced by CRLF in learning_log/settings.py.
+The file will have its original line endings in your working directory
+[master e22c0c0] Set Debug=False for Heroku.
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+(11_env) D:\CS\DjangoProject\learning_log> git status
+On branch master
+nothing to commit, working tree clean
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 518 bytes | 518.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        63 static files copied to '/tmp/build_1d933ab8fb36181c065518c9355c2260/staticfiles'.
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 51.7M
+remote: -----> Launching...
+remote:        Released v6
+remote:        https://laurent-learning-log.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/laurent-learning-log.git
+   9d6ccda..e22c0c0  master -> master
+
+(11_env) D:\CS\DjangoProject\learning_log> git add .
+warning: LF will be replaced by CRLF in learning_log/settings.py.
+The file will have its original line endings in your working directory
+
+(11_env) D:\CS\DjangoProject\learning_log> git commit -am "Added custom 404 and 500 error pages."
+[master 45add34] Added custom 404 and 500 error pages.
+ 3 files changed, 12 insertions(+), 2 deletions(-)
+ create mode 100644 learning_log/templates/404.html
+ create mode 100644 learning_log/templates/500.html
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 760 bytes | 380.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        63 static files copied to '/tmp/build_36388c674b611f3b9d3e9de4bcbd6878/staticfiles'.
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 51.8M
+remote: -----> Launching...
+remote:        Released v7
+remote:        https://laurent-learning-log.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/laurent-learning-log.git
+   e22c0c0..45add34  master -> master
+
+(11_env) D:\CS\DjangoProject\learning_log> git add .
+warning: LF will be replaced by CRLF in learning_logs/views.py.
+The file will have its original line endings in your working directory
+
+(11_env) D:\CS\DjangoProject\learning_log>git commit -am "Add method get_object_or_404()."
+[master 2d33fe5] Add method get_object_or_404().
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+(11_env) D:\CS\DjangoProject\learning_log> git push heroku master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 390 bytes | 390.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Python app detected
+remote:  !     Python has released a security update! Please consider upgrading to python-3.6.7
+remote:        Learn More: https://devcenter.heroku.com/articles/python-runtimes
+remote: -----> Installing requirements with pip
+remote:
+remote: -----> $ python manage.py collectstatic --noinput
+remote:        63 static files copied to '/tmp/build_62e5464fb0cc158f945af2dd90d4de4d/staticfiles'.
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:
+remote: -----> Compressing...
+remote:        Done: 51.7M
+remote: -----> Launching...
+remote:        Released v8
+remote:        https://laurent-learning-log.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/laurent-learning-log.git
+   45add34..2d33fe5  master -> master
+
+(11_env) D:\CS\DjangoProject\learning_log>
