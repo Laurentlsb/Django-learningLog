@@ -1,8 +1,0 @@
-password£º5.......0
-username: ll_admin
-email: siboli_96@outlook.com
-
-heroku 中bash终端创建的superuser:
-password: 5........0
-username: Laurent
-email: siboli_96@outlook.com
